@@ -1,0 +1,19 @@
+<h1>All Boards</h1>
+
+<%= link_to 'New Board', new_board_path %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th></th>
+  </tr>
+ 
+  <% @board.each do |board| %>
+    <tr>
+      <td><%= board.title %></td>
+      <td><%= board.text %></td>
+      <td><%= link_to 'Show', board_path(board) %></td>
+    </tr>
+  <% end %>
+</table>
